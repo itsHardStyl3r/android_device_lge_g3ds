@@ -73,3 +73,6 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_SCREEN_BLANK := true
 TW_THEME := portrait_hdpi
 TWRP_INCLUDE_LOGCAT := true
+
+# TWRP Thermal
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
