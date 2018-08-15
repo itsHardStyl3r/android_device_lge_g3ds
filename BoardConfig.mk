@@ -74,3 +74,74 @@ TWRP_INCLUDE_LOGCAT := true
 
 # TWRP Thermal
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
+
+# TWRP Keymaster
+    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/firmware/image/keymaster)
+    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/vendor/lib)
+    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/vendor/lib/hw)
+    $(shell mkdir -p out/target/product/$(PRODUCT_DEVICE)/recovery/root/sbin)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/bin/nano:recovery/root/bin/nano \
+    $(LOCAL_PATH)/recovery/root/bin/nano.bin:recovery/root/bin/nano.bin \
+    $(LOCAL_PATH)/recovery/root/sbin/libdiag.so:recovery/root/sbin/libdiag.so \
+    $(LOCAL_PATH)/recovery/root/sbin/libdrmfs.so:recovery/root/sbin/libdrmfs.so \
+    $(LOCAL_PATH)/recovery/root/sbin/libdrmtime.so:recovery/root/sbin/libdrmtime.so \
+    $(LOCAL_PATH)/recovery/root/sbin/librpmb.so:recovery/root/sbin/librpmb.so \
+    $(LOCAL_PATH)/recovery/root/sbin/libssd.so:recovery/root/sbin/libssd.so \
+    $(LOCAL_PATH)/recovery/root/sbin/qseecomd:recovery/root/sbin/qseecomd \
+    $(LOCAL_PATH)/recovery/root/sbin/e2fsck:recovery/root/sbin/e2fsck \
+    $(LOCAL_PATH)/recovery/root/sbin/mke2fs:recovery/root/sbin/mke2fs \
+    $(LOCAL_PATH)/recovery/root/sbin/nano:recovery/root/sbin/nano \
+    $(LOCAL_PATH)/recovery/root/sbin/parted:recovery/root/sbin/parted \
+    $(LOCAL_PATH)/recovery/root/sbin/resize2fs:recovery/root/sbin/resize2fs \
+    $(LOCAL_PATH)/recovery/root/sbin/sdparted:recovery/root/sbin/sdparted \
+    $(LOCAL_PATH)/recovery/root/sbin/thermal-engine:recovery/root/sbin/thermal-engine \
+    $(LOCAL_PATH)/recovery/root/sbin/tune2fs:recovery/root/sbin/tune2fs \
+    $(LOCAL_PATH)/recovery/root/firmware/image/cmnlib.b00:recovery/root/firmware/image/keymaster/cmnlib.b00 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/cmnlib.b01:recovery/root/firmware/image/keymaster/cmnlib.b01 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/cmnlib.b02:recovery/root/firmware/image/keymaster/cmnlib.b02 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/cmnlib.b03:recovery/root/firmware/image/keymaster/cmnlib.b03 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/cmnlib.mdt:recovery/root/firmware/image/keymaster/cmnlib.mdt \
+    $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b00:recovery/root/firmware/image/keymaster/keymaste.b00 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b01:recovery/root/firmware/image/keymaster/keymaste.b01 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b02:recovery/root/firmware/image/keymaster/keymaste.b02 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b03:recovery/root/firmware/image/keymaster/keymaste.b03 \
+    $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.mdt:recovery/root/firmware/image/keymaster/keymaste.mdt \
+    $(LOCAL_PATH)/recovery/root/vendor/bin/time_daemon:recovery/root/vendor/bin/time_daemon \
+    $(LOCAL_PATH)/recovery/root/vendor/lib/libQSEEComAPI.so:recovery/root/vendor/lib/libQSEEComAPI.so \
+    $(LOCAL_PATH)/recovery/root/vendor/lib/hw/keystore.msm8974.so:recovery/root/vendor/lib/hw/keystore.msm8974.so \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/a/ansi:recovery/root/etc/terminfo/a/ansi \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/c/cons25:recovery/root/etc/terminfo/c/cons25 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/c/cygwin:recovery/root/etc/terminfo/c/cygwin \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/d/dumb:recovery/root/etc/terminfo/d/dumb \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/E/Eterm:recovery/root/etc/terminfo/E/Eterm \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/E/Eterm-color:recovery/root/etc/terminfo/E/Eterm-color \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/h/hurd:recovery/root/etc/terminfo/h/hurd \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/l/linux:recovery/root/etc/terminfo/l/linux \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/m/mach:recovery/root/etc/terminfo/m/mach \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/m/mach-bold:recovery/root/etc/terminfo/m/mach-bold \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/m/mach-color:recovery/root/etc/terminfo/m/mach-color \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/p/pcansi:recovery/root/etc/terminfo/p/pcansi \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/r/rxvt:recovery/root/etc/terminfo/r/rxvt \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/r/rxvt-basic:recovery/root/etc/terminfo/r/rxvt-basic \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen:recovery/root/etc/terminfo/s/screen \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen-256color:recovery/root/etc/terminfo/s/screen-256color \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen-256color-bce:recovery/root/etc/terminfo/s/screen-256color-bce \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen-bce:recovery/root/etc/terminfo/s/screen-bce \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen-s:recovery/root/etc/terminfo/s/screen-s \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/screen-s:recovery/root/etc/terminfo/s/screen-w \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/s/sun:recovery/root/etc/terminfo/s/sun \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/v/vt52:recovery/root/etc/terminfo/v/vt52 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/v/vt100:recovery/root/etc/terminfo/v/vt100 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/v/vt102:recovery/root/etc/terminfo/v/vt102 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/v/vt220:recovery/root/etc/terminfo/v/vt220 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/w/wsvt25:recovery/root/etc/terminfo/w/wsvt25 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/w/wsvt25m:recovery/root/etc/terminfo/w/wsvt25m \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm:recovery/root/etc/terminfo/x/xterm \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-256color:recovery/root/etc/terminfo/x/xterm-256color \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-color:recovery/root/etc/terminfo/x/xterm-color \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-r5:recovery/root/etc/terminfo/x/xterm-r5 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-r6:recovery/root/etc/terminfo/x/xterm-r6 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-vt220:recovery/root/etc/terminfo/x/xterm-vt220 \
+    $(LOCAL_PATH)/recovery/root/etc/terminfo/x/xterm-xfree86:recovery/root/etc/terminfo/x/xterm-xfree86
