@@ -8,10 +8,10 @@ on boot
     write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
     write /sys/block/mmcblk1/queue/scheduler deadline
     write /sys/block/mmcblk1/bdi/read_ahead_kb 2048
-    
+
     write /sys/module/msm_thermal/core_control/enabled 1
     write /sys/module/msm_thermal/parameters/enabled 1
-    
+
     write /sys/module/lpm_levels/enable_low_power/l2 4
 
     chown root system /sys/devices/system/cpu/cpu0/online
@@ -36,7 +36,7 @@ on boot
     write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/suspend_enabled 1
-    
+
     write /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu2/power_collapse/idle_enabled 1
@@ -45,22 +45,22 @@ on boot
     write /sys/module/msm_pm/modes/cpu1/standalone_power_collapse/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu2/standalone_power_collapse/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu3/standalone_power_collapse/idle_enabled 1
-    
+
     write /sys/module/msm_pm/modes/cpu0/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu1/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu2/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu3/retention/idle_enabled 1
-    
+
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "conservative"
-    
+
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
-    
+
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1497600
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1497600
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1497600
@@ -85,7 +85,7 @@ on fs
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
-    
+
     # apply chmod for parted
     chmod 0775 /sbin/e2fsck
     chmod 0775 /sbin/mke2fs
@@ -93,6 +93,9 @@ on fs
     chmod 0775 /sbin/resize2fs
     chmod 0775 /sbin/sdparted
     chmod 0775 /sbin/tune2fs
+
+    # apply chmod for nano
+    chmod 0775 /sbin/nano
 
 # separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
