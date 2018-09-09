@@ -1,6 +1,4 @@
-#!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-set -e
-
-export DEVICE=g3ds
-export DEVICE_COMMON=g3-common
-export VENDOR=lge
-
-export DEVICE_BRINGUP_YEAR=2016
-
-./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/liquid.mk
