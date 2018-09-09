@@ -1,7 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-# Init scripts
-
 include $(CLEAR_VARS)
 LOCAL_MODULE            := fstab.g3
 LOCAL_MODULE_TAGS       := optional eng
