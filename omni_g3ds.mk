@@ -5,8 +5,8 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := d855
-PRODUCT_NAME := omni_d855
+PRODUCT_DEVICE := g3ds
+PRODUCT_NAME := omni_g3ds
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-D855
+PRODUCT_MODEL := LG-G3DS
 PRODUCT_MANUFACTURER := LGE
