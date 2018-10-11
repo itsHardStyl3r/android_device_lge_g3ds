@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
 # Copyright (C) 2018 The LineageOS Project
@@ -16,12 +15,23 @@
 # limitations under the License.
 #
 
-set -e
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-export DEVICE=g3ds
-export DEVICE_COMMON=g3-common
-export VENDOR=lge
+# Inherit some common PixelExperience stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_GAPPS_ARCH := arm
 
-export DEVICE_BRINGUP_YEAR=2016
+# Inherit from g3ds device
+$(call inherit-product, device/lge/g3ds/device.mk)
 
-./../../$VENDOR/$DEVICE_COMMON/setup-makefiles.sh $@
+# Set those variables here to overwrite the inherited values.
+PRODUCT_DEVICE := g3ds
+PRODUCT_NAME := aosp_g3ds
+PRODUCT_BRAND := lge
+PRODUCT_MODEL := g3ds
+PRODUCT_MANUFACTURER := LGE
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_DEVICE="g3"
