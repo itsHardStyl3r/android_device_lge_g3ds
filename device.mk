@@ -16,8 +16,8 @@
 
 # Audio
 PRODUCT_COPY_FILES += \
-    device/lge/g3-common/configs/audio/audio_platform_info_bcm.xml:system/vendor/etc/audio_platform_info.xml \
-    device/lge/g3-common/configs/audio/mixer_paths_bcm.xml:system/vendor/etc/mixer_paths.xml
+    device/lge/g3-common/configs/audio/audio_platform_info_bcm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    device/lge/g3-common/configs/audio/mixer_paths_bcm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # FM Radio
 PRODUCT_PACKAGES += \
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # NFC
-PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/vendor/etc/permissions/android.hardware.nfc.hce.xml
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml
 
 PRODUCT_PACKAGES += \
     NfcNci \
