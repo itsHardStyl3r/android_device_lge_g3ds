@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_g3ds.mk
+    $(LOCAL_DIR)/aosp_g3ds.mk
