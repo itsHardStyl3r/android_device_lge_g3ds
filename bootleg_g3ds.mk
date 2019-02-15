@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Bootleggers stuff.
 $(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
-TARGET_PICK_BOOTANIMATION := 9
+TARGET_PICK_BOOTANIMATION := 4
 
 # Inherit from g3ds device
 $(call inherit-product, device/lge/g3ds/device.mk)
