@@ -108,7 +108,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b02:recovery/root/firmware/image/keymaster/keymaste.b02 \
     $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.b03:recovery/root/firmware/image/keymaster/keymaste.b03 \
     $(LOCAL_PATH)/recovery/root/firmware/image/keymaste.mdt:recovery/root/firmware/image/keymaster/keymaste.mdt \
-    $(LOCAL_PATH)/recovery/root/vendor/bin/time_daemon:recovery/root/vendor/bin/time_daemon \
     $(LOCAL_PATH)/recovery/root/vendor/lib/libQSEEComAPI.so:recovery/root/vendor/lib/libQSEEComAPI.so \
     $(LOCAL_PATH)/recovery/root/vendor/lib/hw/keystore.msm8974.so:recovery/root/vendor/lib/hw/keystore.msm8974.so \
     $(LOCAL_PATH)/recovery/root/etc/terminfo/a/ansi:recovery/root/etc/terminfo/a/ansi \
