@@ -15,3 +15,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_g3ds.mk
+
+COMMON_LUNCH_CHOICES := \
+    aosp_g3ds-userdebug \
+    aosp_g3ds-eng \
+    aosp_g3ds-user
