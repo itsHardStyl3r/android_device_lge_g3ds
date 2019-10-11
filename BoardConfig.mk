@@ -50,7 +50,7 @@ BOARD_NFC_CHIPSET := pn547
 BOARD_NFC_HAL_SUFFIX := msm8974
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/lge/g3ds/sepolicy
+#BOARD_SEPOLICY_DIRS += device/lge/g3ds/sepolicy
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_g3ds
