@@ -36,11 +36,9 @@
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::init::property_set;
 
 std::vector<std::string> ro_product_props_default_source_order = {
     ".",
@@ -64,16 +62,16 @@ void property_override(char const prop[], char const value[], bool add = true)
 
 void cdma_properties()
 {
-    property_set("ro.telephony.default_cdma_sub", "0");
-    property_set("ro.telephony.default_network", "10,1");
-    property_set("ro.telephony.get_imsi_from_sim", "true");
-    property_set("telephony.lteOnCdmaDevice", "1");
+    property_override("ro.telephony.default_cdma_sub", "0");
+    property_override("ro.telephony.default_network", "10,1");
+    property_override("ro.telephony.get_imsi_from_sim", "true");
+    property_override("telephony.lteOnCdmaDevice", "1");
 }
 
 void gsm_properties(char const default_network[])
 {
-    property_set("ro.telephony.default_network", default_network);
-    property_set("telephony.lteOnGsmDevice", "1");
+    property_override("ro.telephony.default_network", default_network);
+    property_override("telephony.lteOnGsmDevice", "1");
 }
 
 void vendor_load_properties()
